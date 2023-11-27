@@ -146,6 +146,77 @@ troduplo = g(3)
 print(duplo(11))
 print(troduplo(11))
 
+def paran(n):
+    if n%2 == 0:
+        print("Uneti broj je paran")
+    else:
+        print("Uneti broj je neparan")       
+        
+def pozitivan(a):
+    if a>0:
+        print("Uneti broj je pozitivan")
+    else:
+        print("Uneti broj je negativan.")
+
+br = int(input("Unesite broj: "))
+paran(br)
+pozitivan(br)
+
+
+#faktorijel
+def fact(n):
+    if n ==1: #ovo stavljamo da bi smo prekinuli for petlju nekada
+        return 1
+    return fact(n - 1)*n
+print(fact(5))
+
+def faktorijel(m):
+    if m == 1:
+        return 1   
+    return faktorijel(m-1)*m
+print(faktorijel(6))
+
+a = lambda x : x * 10
+print(a(10))
+
+def lam(r):
+    return lambda  y: y * r #pom = lambda y : y * 10
+
+pom = lam(10)  
+print(pom(10))
+
+niz = ["maja", "atija", "resad", "adem"]
+drugi = ["amra", "farah", "rajif", "jaman"]
+drugi2 = ["amra", "farah", "rajif", "jaman", "resad", "maida", "atija", "adem"]
+
+def stampa(nesto):
+    for i in range(0,len(nesto)): #for i in nesto: print i
+        print(nesto[i])
+print(" ")
+stampa(niz)
+print(" ")
+stampa(drugi)
+print(" ")
+stampa(drugi2)
+
+a = []
+def unos():
+    #a =[], a ako hocemo da nam pamti rezultate onda ovo a stavljamo ispred def unos()
+    while True:
+        c = input("UNESITE IME: ").capitalize()
+        if c == " ":
+            break
+        else:
+            a.append(c)
+    print(a)
+print("PRVI NIZ JE: ")
+unos()
+print("DRUGI NIZ JE: ")
+unos()
+
+
+
+
 #nizovi
 #python nema ugradjenu podrsku za nizove, ali se umesto njih koriste liste. sada pokazujemo kako koristimo liste kao nizove. 
 #medjutim, da bi smo radili bas sa nizovima moramo da uvezemo biblioteku kao sto je biblioteka NumPy
@@ -408,3 +479,40 @@ myiter = iter(myclass)
 
 for x in myiter:
   print(x)
+
+class Pogon:
+    def __init__(self, metraza, materijal):
+        self.metraza = metraza
+        self.materijal = materijal
+    def ispis(self):
+        print ("Koristimo metrazu",self.metraza,"kao i materijal",self.materijal,"koji je bas dobar i bas pogodan")
+a = Pogon(1234, "pamuk")
+a.ispis()
+
+class Proizvod:
+    def __init__(self, a, b, c, d):
+        self.a = a
+        self.b = b
+        self.c = c
+        self.d = d
+    def pro(self):
+        return self.a*self.b*self.c*self.d
+p5 = Proizvod(2,3,4,5)
+k = p5.pro()
+print("Proizvod brojeva je",k)
+
+class Tepisi:
+    def __init__(self, kolekcije, dimenzija):
+        self.kolekcije = kolekcije
+        self.dimenzija = dimenzija
+    def tepih(self):
+        print("Tepih je kolekcije",self.kolekcije,"dimenzije",self.dimenzija,"cm.")
+s = Tepisi("SARDES","160X230")
+g = Tepisi("GASPARA", "200X300")
+
+s.tepih()
+g.tepih()
+
+class Iter:
+    def __init__(self, a, b):
+        pass
